@@ -9,7 +9,7 @@ multiplication = a * b
 division = a / b
 
 print("\nArithmetic Operations Results")
-print("-----------------------------")
+print("--------------------------------")
 print("Addition       :", addition)
 print("Subtraction    :", subtraction)
 print("Multiplication :", multiplication)
