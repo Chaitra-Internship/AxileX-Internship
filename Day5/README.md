@@ -3,12 +3,12 @@
 ## 1. Arithmetic Operations using functions
 
 ### Output: 
-Enter first number: 35
+```Enter first number: 35
 Enter second number: 5
 Addition: 40
 Subtraction: 30
 Multiplication: 175
-Division: 7.0
+Division: 7.0```
 
 # 2. Factorial Program
 
