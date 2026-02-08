@@ -39,3 +39,28 @@ Enter number of rows: 5<br>
 * * * <br>
 * * * * <br>
 * * * * * <br>
+
+## 4. Pyramid star pattern
+
+### Output:
+Enter number of rows: 6<br>
+     * <br>
+    * * <br>
+   * * * <br>
+  * * * * <br>
+ * * * * * <br>
+* * * * * * <br>
+
+## 5. Diamond star pattern
+
+### Output:
+Enter number of rows: 5<br>
+    * <br>
+   * * <br>
+  * * * <br>
+ * * * * <br>
+* * * * * <br>
+ * * * * <br>
+  * * * <br>
+   * * <br>
+    * <br>
