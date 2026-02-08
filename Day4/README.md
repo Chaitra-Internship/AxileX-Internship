@@ -33,34 +33,40 @@ Sum = 55<br>
 ## 3. Right-angled triangle star pattern
 
 ### Output:
-Enter number of rows: 5<br>
-* <br>
-* * <br>
-* * * <br>
-* * * * <br>
-* * * * * <br>
+```
+Enter number of rows: 5
+*
+* *
+* * * 
+* * * * 
+* * * * * 
+```
 
 ## 4. Pyramid star pattern
 
 ### Output:
-Enter number of rows: 6<br>
-     * <br>
-    * * <br>
-   * * * <br>
-  * * * * <br>
- * * * * * <br>
-* * * * * * <br>
+```
+Enter number of rows: 6
+     * 
+    * * 
+   * * * 
+  * * * * 
+ * * * * * 
+* * * * * * 
+```
 
 ## 5. Diamond star pattern
 
 ### Output:
-Enter number of rows: 5<br>
-    * <br>
-   * * <br>
-  * * * <br>
- * * * * <br>
-* * * * * <br>
- * * * * <br>
-  * * * <br>
-   * * <br>
-    * <br>
+```
+Enter number of rows: 5
+    * 
+   * *
+  * * * 
+ * * * *
+* * * * * 
+ * * * * 
+  * * * 
+   * *
+    * 
+```
