@@ -1,3 +1,5 @@
+# Program to print personal details
+
 name = input("Enter your name: ")
 age = input("Enter your age: ")
 course = input("Enter your course: ")
