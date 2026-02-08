@@ -10,7 +10,7 @@ Subtraction: 30<br>
 Multiplication: 175<br>
 Division: 7.0<br>
 
-# 2. Factorial Program
+## 2. Factorial Program
 
 ### Output: 
 Enter a number: 5<br>
