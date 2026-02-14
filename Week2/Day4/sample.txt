@@ -1,0 +1,5 @@
+Hello, this is a file handling example.
+Python makes file handling easy.
+This file is created using write mode.
+This line is added using append mode.
+Python file handling is simple.
