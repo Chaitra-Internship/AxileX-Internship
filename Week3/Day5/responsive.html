@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Design Example</title>
+
+    <!-- Important for mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #34495e;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            display: inline-block;
+        }
+
+        /* Main Container */
+        .container {
+            width: 90%;          /* Percentage width */
+            margin: auto;        /* Center content */
+            padding: 20px;
+        }
+
+        /* Two column layout */
+        .left {
+            width: 60%;          /* Percentage width */
+            float: left;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .right {
+            width: 35%;          /* Percentage width */
+            float: right;
+            background-color: #ddd;
+            padding: 20px;
+        }
+
+        /* Clear float */
+        .container::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* ========================== */
+        /* Basic Media Query for Mobile */
+        /* ========================== */
+
+        @media screen and (max-width: 768px) {
+
+            .left, .right {
+                width: 100%;   /* Stack columns */
+                float: none;
+                margin-bottom: 10px;
+            }
+
+            .navbar a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Responsive Website</h1>
+    </div>
+
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="container">
+        <div class="left">
+            <h2>Main Content</h2>
+            <p>This layout uses percentage widths and media queries to adjust for mobile screens.</p>
+        </div>
+
+        <div class="right">
+            <h2>Sidebar</h2>
+            <p>This sidebar moves below the content on smaller screens.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Responsive Design Example</p>
+    </div>
+
+</body>
+</html>
