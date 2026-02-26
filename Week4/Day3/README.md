@@ -1,8 +1,3 @@
-#  Week4 – Day3 – README.md
-
-Create: `Week4/Day3/README.md`
-
-```markdown
 # Week 4 – Day 3
 ## Python Database Connectivity (CRUD)
 
