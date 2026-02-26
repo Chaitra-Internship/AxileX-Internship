@@ -1,5 +1,3 @@
----
-
 #  Week4 – Day3 – README.md
 
 Create: `Week4/Day3/README.md`
