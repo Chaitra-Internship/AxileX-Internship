@@ -8,7 +8,7 @@ Create: `Week4/Day3/README.md`
 # Week 4 – Day 3
 ## Python Database Connectivity (CRUD)
 
-### 🎯 Objective
+###  Objective
 To connect Python with MySQL and perform CRUD operations.
 
 ---
@@ -31,7 +31,7 @@ To connect Python with MySQL and perform CRUD operations.
 
 ---
 
-## 📦 Install Connector
+## Install Connector
 
 ```bash
 pip3 install mysql-connector-python
