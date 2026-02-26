@@ -1,27 +1,37 @@
-# Week 4 – Day 1
-## Introduction to Backend (Flask)
+---
 
-### Objective
-To understand backend development basics and run a simple Flask server.
+#  Week4 – Day3 – README.md
+
+Create: `Week4/Day3/README.md`
+
+```markdown
+# Week 4 – Day 3
+## Python Database Connectivity (CRUD)
+
+### 🎯 Objective
+To connect Python with MySQL and perform CRUD operations.
 
 ---
 
 ##  Tools Used
-- Python 3
-- Flask
+- Python
+- MySQL
+- mysql-connector-python
 - VS Code
 
 ---
 
 ##  Tasks Completed
-- Installed Flask
-- Created basic backend project
-- Ran server on browser
-- Displayed Welcome message
+- Connected Python with MySQL
+- Performed Insert
+- Performed Select
+- Performed Update
+- Performed Delete
+- Created menu-driven application
 
 ---
 
-##  Installation
+## 📦 Install Connector
 
 ```bash
-pip install flask
+pip3 install mysql-connector-python
