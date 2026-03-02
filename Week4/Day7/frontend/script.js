@@ -1,4 +1,4 @@
-fetch("https://YOUR_RENDER_URL/api")
+fetch("https://axilex-internship.onrender.com/api")
 .then(res => res.json())
 .then(data => {
     document.getElementById("output").innerText = data.message;
