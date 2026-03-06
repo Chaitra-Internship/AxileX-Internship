@@ -144,23 +144,23 @@ def add():
 
 # ---------- UPDATE JOB ----------
 
-@app.route("/update_job/<int:id>", methods=["PUT"])
+@app.route("/update_job/<int:id>", methods=["POST"])
 def update_job(id):
 
-    data = request.json
+    status = request.form["status"]
 
     conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
 
     cursor.execute(
         "UPDATE jobs SET status=? WHERE id=?",
-        (data["status"], id)
+        (status, id)
     )
 
     conn.commit()
     conn.close()
 
-    return jsonify({"message": "Job updated"})
+    return redirect("/dashboard")
 
 
 # ---------- DELETE JOB ----------
