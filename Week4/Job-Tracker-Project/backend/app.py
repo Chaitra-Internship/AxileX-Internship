@@ -144,24 +144,33 @@ def add():
 
 # ---------- UPDATE JOB ----------
 
-@app.route("/update_job/<int:id>", methods=["POST"])
-def update_job(id):
+@app.route("/edit/<int:id>", methods=["GET","POST"])
+def edit(id):
 
-    status = request.form["status"]
+    db = get_db()
 
-    conn = sqlite3.connect("database.db")
-    cursor = conn.cursor()
+    if request.method == "POST":
 
-    cursor.execute(
-        "UPDATE jobs SET status=? WHERE id=?",
-        (status, id)
-    )
+        company = request.form["company"]
+        role = request.form["role"]
+        status = request.form["status"]
+        date = request.form["date"]
 
-    conn.commit()
-    conn.close()
+        db.execute(
+            "UPDATE jobs SET company=?, role=?, status=?, date=? WHERE id=?",
+            (company, role, status, date, id)
+        )
 
-    return redirect("/dashboard")
+        db.commit()
 
+        return redirect("/dashboard")
+
+    job = db.execute(
+        "SELECT * FROM jobs WHERE id=?",
+        (id,)
+    ).fetchone()
+
+    return render_template("edit_job.html", job=job)
 
 # ---------- DELETE JOB ----------
 
@@ -184,3 +193,10 @@ def delete(id):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
+
+@app.route("/logout")
+def logout():
+
+    session.pop("user", None)
+
+    return redirect("/")
