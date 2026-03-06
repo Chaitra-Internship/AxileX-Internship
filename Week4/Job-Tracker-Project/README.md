@@ -8,7 +8,7 @@ Users can register, log in, add job applications, update job status, and delete 
 ## Live Deployment
 
 Frontend (Netlify)  
-https://job-application-tracker-mini-project.netlify.app/
+https://job-application-tracker-mini-project.netlify.app
 
 Backend API (Render)  
 https://axilex-internship-1.onrender.com/api
