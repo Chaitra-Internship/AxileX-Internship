@@ -188,11 +188,7 @@ def delete(id):
 
     return redirect("/dashboard")
 
-
-# ---------- RUN SERVER ----------
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+# --------- LOGOUT --------------
 
 @app.route("/logout")
 def logout():
@@ -200,3 +196,10 @@ def logout():
     session.pop("user", None)
 
     return redirect("/")
+
+
+# ---------- RUN SERVER ----------
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)
+
