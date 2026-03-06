@@ -1,8 +1,42 @@
 from flask import Flask, render_template, request, redirect, session, jsonify
+from flask_cors import CORS
 import sqlite3
 
 app = Flask(__name__)
+CORS(app)
 app.secret_key = "secret123"
+
+
+# ---------- DATABASE ----------
+
+def init_db():
+    conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
+
+    # Users table
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT,
+        password TEXT
+    )
+    """)
+
+    # Jobs table
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS jobs (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        company TEXT,
+        role TEXT,
+        status TEXT,
+        date TEXT
+    )
+    """)
+
+    conn.commit()
+    conn.close()
+
+init_db()
 
 
 def get_db():
@@ -11,10 +45,14 @@ def get_db():
     return conn
 
 
+# ---------- API TEST ----------
+
 @app.route("/api")
 def api():
     return jsonify({"message": "Job Tracker Backend Running"})
 
+
+# ---------- LOGIN ----------
 
 @app.route("/", methods=["GET", "POST"])
 def login():
@@ -40,6 +78,8 @@ def login():
     return render_template("login.html")
 
 
+# ---------- REGISTER ----------
+
 @app.route("/register", methods=["GET","POST"])
 def register():
 
@@ -62,6 +102,8 @@ def register():
     return render_template("register.html")
 
 
+# --------- DASHBOARD ----------
+
 @app.route("/dashboard")
 def dashboard():
 
@@ -73,6 +115,8 @@ def dashboard():
 
     return render_template("dashboard.html", jobs=jobs)
 
+
+# ---------- ADD JOB ----------
 
 @app.route("/add", methods=["GET","POST"])
 def add():
@@ -98,6 +142,29 @@ def add():
     return render_template("add_job.html")
 
 
+# ---------- UPDATE JOB ----------
+
+@app.route("/update_job/<int:id>", methods=["PUT"])
+def update_job(id):
+
+    data = request.json
+
+    conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
+
+    cursor.execute(
+        "UPDATE jobs SET status=? WHERE id=?",
+        (data["status"], id)
+    )
+
+    conn.commit()
+    conn.close()
+
+    return jsonify({"message": "Job updated"})
+
+
+# ---------- DELETE JOB ----------
+
 @app.route("/delete/<int:id>")
 def delete(id):
 
@@ -113,5 +180,7 @@ def delete(id):
     return redirect("/dashboard")
 
 
+# ---------- RUN SERVER ----------
+
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=10000)
